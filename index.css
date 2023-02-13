@@ -18,40 +18,12 @@
 @import url(./blocks/footer/footer.css);
 @import url(./blocks/footer/__copyright/footer__copyright.css);
 
+@import url(./blocks/cards/cards.css);
+@import url(./blocks/cards/__items/card__items.css);
+@import url(./blocks/cards/__photo/card__photo.css);
 
-.cards {
-  margin: 47px auto 0;
-}
 
-.card__items {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(3, 282px);
-  gap: 17px 20px;
-  justify-content: center;
 
-}
-
-@media screen and (max-width:880px) {
-  .card__items {
-  grid-template-columns: repeat(2, 282px);
-  }
-}
-
-@media screen and (max-width:660px) {
-  .card__items {
-  grid-template-columns: 282px;
-  }
-}
-
-.card__photo {
-  background: #C4C4C4;
-  border-radius: 10px 10px 0px 0px;
-  width: 282px;
-  height: 282px;
-}
 
 .card__caption {
   box-sizing: border-box;
@@ -72,6 +44,9 @@
   font-size: 24px;
   line-height: 29px;
   color: #000000;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .card__item {
