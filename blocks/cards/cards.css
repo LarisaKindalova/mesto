@@ -1,0 +1,9 @@
+.cards {
+  margin: 47px auto 0;
+}
+
+@media screen and (max-width:660px) {
+  .cards {
+    margin: 36px auto 0;
+  }
+}
