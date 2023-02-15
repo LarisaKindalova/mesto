@@ -8,10 +8,10 @@ let profileEditButton = document.querySelector('.profile__edit-button');
 // кнопка закрыть
 let popupCloseButton = document.querySelector('.popup__close-button');
 
-//форма
+//форма редактирования
 let popupEditForm = document.querySelector('.popup__edit-form');
 
-//поля формы
+//поля формы редактирования
 let popupInputUsername = document.querySelector('.popup__input_username');
 let popupInputJob = document.querySelector('.popup__input_job');
 let popupSubmitButton = document.querySelector('.popup__submit-button');
@@ -43,7 +43,7 @@ function popupClose (popup) {
   popupEditProfile.classList.remove('popup_opened');
 };
 
-//submit закрытие профиля
+//функция submit закрытие профиля
 function handleFormSubmit (evt) {
   evt.preventDefault();
   profileUserName.textContent = popupInputUsername.value;
