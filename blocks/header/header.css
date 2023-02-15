@@ -4,11 +4,13 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin: 45px auto 36px;
+  margin: 45px auto 39px;
 }
 
 @media screen and (max-width: 768px) {
   .header {
     margin: 28px auto 44px;
+    width: 100%;
   }
 }
+

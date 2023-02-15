@@ -1,7 +1,7 @@
 //popup
 let popupEditProfile = document.querySelector('.popup_edit-profile');
 
-//кнопки открыть
+//кнопки
 let profileAddButton = document.querySelector('.profile__add-button');
 let profileEditButton = document.querySelector('.profile__edit-button');
 
@@ -28,6 +28,7 @@ profileEditButton.addEventListener('click', function() {
   popupInputJob.value = profileJob.textContent;
 });
 
+//функиця открытия popup
 function openPopup(popup) {
   popupEditProfile.classList.add('popup_opened');
 };
@@ -37,6 +38,7 @@ popupCloseButton.addEventListener('click', function(){
   popupClose(popupEditProfile)
 });
 
+// функция закрытия popup
 function popupClose (popup) {
   popupEditProfile.classList.remove('popup_opened');
 };

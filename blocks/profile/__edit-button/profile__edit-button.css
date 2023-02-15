@@ -8,7 +8,7 @@
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
-  margin-top: 13px;
+  margin-top: 16px;
   transition: opacity .5s ease-in-out;
 }
 
@@ -21,5 +21,5 @@
     width: 18px;
     height: 18px;
     margin-top: 8px;
-  }  
+  }
 }

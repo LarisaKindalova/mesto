@@ -7,6 +7,11 @@
   cursor: pointer;
   font-family: inherit;
   margin: 23px 0 0;
+  transition: opacity .5s ease-in-out;
+}
+
+.popup__submit-button:hover {
+  opacity: .8;
 }
 
 @media screen and (max-width: 550px) {
