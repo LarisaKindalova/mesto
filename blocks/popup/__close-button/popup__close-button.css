@@ -3,6 +3,7 @@
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: 32px 32px;
   cursor: pointer;
   border: none;
   height: 32px;
@@ -19,7 +20,7 @@
 
 @media screen and (max-width: 550px) {
   .popup__close-button {
-    background-image: url(../../../images/close_btn_mobile.svg);
+    background-size: 20px 20px;
     width: 20px;
     height: 20px;
     right: 0;

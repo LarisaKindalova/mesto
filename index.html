@@ -29,42 +29,42 @@
         <img  class="cards__photo" src="./images/greece.jpg" alt="Греция">
         <div class="cards__caption">
           <h2 class="cards__title">Греция</h2>
-          <button class="cards__like cards__like_active" type="button" aria-label="Лайк"></button>
+          <button class="cards__like" type="button" aria-label="Лайк"></button>
         </div>
       </li>
       <li class="cards__item">
         <img  class="cards__photo" src="./images/china.jpg" alt="Китай">
         <div class="cards__caption">
           <h2 class="cards__title">Китай</h2>
-          <button class="cards__like cards__like_active" type="button" aria-label="Лайк"></button>
+          <button class="cards__like" type="button" aria-label="Лайк"></button>
         </div>
       </li>
       <li class="cards__item">
         <img  class="cards__photo" src="./images/italy.jpg" alt="Италия">
         <div class="cards__caption">
           <h2 class="cards__title">Манарола, Италия</h2>
-          <button class="cards__like cards__like_active" type="button" aria-label="Лайк"></button>
+          <button class="cards__like" type="button" aria-label="Лайк"></button>
         </div>
       </li>
       <li class="cards__item">
         <img  class="cards__photo" src="./images/spain.jpg" alt="Испания">
         <div class="cards__caption">
           <h2 class="cards__title">Испания</h2>
-          <button class="cards__like cards__like_active" type="button" aria-label="Лайк"></button>
+          <button class="cards__like" type="button" aria-label="Лайк"></button>
         </div>
       </li>
       <li class="cards__item">
         <img  class="cards__photo" src="./images/thailand.jpg" alt="Тайланд">
         <div class="cards__caption">
           <h2 class="cards__title">Пхукет, Тайланд</h2>
-          <button class="cards__like cards__like_active" type="button" aria-label="Лайк"></button>
+          <button class="cards__like" type="button" aria-label="Лайк"></button>
         </div>
       </li>
       <li class="cards__item">
         <img  class="cards__photo" src="./images/new_york.jpg" alt="Нью-Йорк">
         <div class="cards__caption">
           <h2 class="cards__title">Нью-Йорк</h2>
-          <button class="cards__like cards__like_active" type="button" aria-label="Лайк"></button>
+          <button class="cards__like" type="button" aria-label="Лайк"></button>
         </div>
       </li>
     </ul>
@@ -74,13 +74,13 @@
 <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
 </footer>
 <!-- Попап редкатирование профиля-->
-<div class="popup popup_edit-profile">
+<div class="popup popup_type_edit-profile">
   <div class="popup__container">
     <button class="popup__close-button" type="button"></button>
     <h2 class="popup__title">Редактировать профиль</h2>
-    <form class="popup__form popup__edit-form">
-     <input required class="popup__input popup__input_username" type="text" name="profile__username"  placeholder="Введите имя">
-     <input required class="popup__input popup__input_job" type="text" name="profile__job" placeholder="Введите род занятий">
+    <form class="popup__edit-form" name="popup__edit-form">
+     <input required class="popup__input popup__input_value_username" type="text" name="profile__username"  placeholder="Введите имя">
+     <input required class="popup__input popup__input_value_job" type="text" name="profile__job" placeholder="Введите род занятий">
       <button type="submit" class="popup__submit-button" aria-label="кнопка сохранить">Сохранить</button>
     </form>
   </div>
