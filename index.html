@@ -26,6 +26,7 @@
   <section class="cards" aria-label="Фотогалерея">
     <ul class="cards__list">
       <li class="cards__item">
+        <button class="cards__trash-btn" type="button"></button>
         <img  class="cards__photo" src="./images/greece.jpg" alt="Греция">
         <div class="cards__caption">
           <h2 class="cards__title">Греция</h2>
@@ -33,6 +34,7 @@
         </div>
       </li>
       <li class="cards__item">
+        <button class="cards__trash-btn" type="button"></button>
         <img  class="cards__photo" src="./images/china.jpg" alt="Китай">
         <div class="cards__caption">
           <h2 class="cards__title">Китай</h2>
@@ -40,6 +42,7 @@
         </div>
       </li>
       <li class="cards__item">
+        <button class="cards__trash-btn" type="button"></button>
         <img  class="cards__photo" src="./images/italy.jpg" alt="Италия">
         <div class="cards__caption">
           <h2 class="cards__title">Манарола, Италия</h2>
@@ -47,6 +50,7 @@
         </div>
       </li>
       <li class="cards__item">
+        <button class="cards__trash-btn" type="button"></button>
         <img  class="cards__photo" src="./images/spain.jpg" alt="Испания">
         <div class="cards__caption">
           <h2 class="cards__title">Испания</h2>
@@ -54,6 +58,7 @@
         </div>
       </li>
       <li class="cards__item">
+        <button class="cards__trash-btn" type="button"></button>
         <img  class="cards__photo" src="./images/thailand.jpg" alt="Тайланд">
         <div class="cards__caption">
           <h2 class="cards__title">Пхукет, Тайланд</h2>
@@ -61,6 +66,7 @@
         </div>
       </li>
       <li class="cards__item">
+        <button class="cards__trash-btn" type="button"></button>
         <img  class="cards__photo" src="./images/new_york.jpg" alt="Нью-Йорк">
         <div class="cards__caption">
           <h2 class="cards__title">Нью-Йорк</h2>
@@ -74,15 +80,35 @@
 <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
 </footer>
 <!-- Попап редкатирование профиля-->
-<div class="popup">
+<div class="popup popup_type_edit-profile">
   <div class="popup__container">
     <button class="popup__close-button" type="button"></button>
     <h2 class="popup__title">Редактировать профиль</h2>
-    <form class="popup__edit-form" name="popup__edit-form">
+    <form class="popup__form popup__form_edit" name="popup__edit-form">
      <input required class="popup__input popup__input_value_username" type="text" name="profile__username"  placeholder="Введите имя">
      <input required class="popup__input popup__input_value_job" type="text" name="profile__job" placeholder="Введите род занятий">
       <button type="submit" class="popup__submit-button" aria-label="кнопка сохранить">Сохранить</button>
     </form>
+  </div>
+</div>
+<!-- Попап добавление фотографии -->
+<div class="popup popup_type_add-card">
+  <div class="popup__container">
+    <button class="popup__close-button" type="button"></button>
+    <h2 class="popup__title">Новое место</h2>
+    <form class="popup__form popup__form_add" name="popup__add-form">
+     <input required class="popup__input popup__input_value_card-name" type="text" name="card-name"  placeholder="Название">
+     <input required class="popup__input popup__input_value_card-link" type="url" name="card-link" placeholder="Ссылка на картинку">
+      <button type="submit" class="popup__submit-button" aria-label="кнопка сохранить">Сохранить</button>
+    </form>
+  </div>
+</div>
+<!-- Попап фотографии -->
+<div class="popup popup_type_large-img popup_opened">
+  <div class="popup__container-large-img">
+    <button class="popup__close-button" type="button"></button>
+    <img class="popup__image" src="./images/greece.jpg" alt="Греция">
+    <p class="popup__caption">Греция</p>
   </div>
 </div>
 <script src="./scripts/index.js"></script>
