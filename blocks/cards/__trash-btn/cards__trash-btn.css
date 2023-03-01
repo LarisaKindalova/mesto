@@ -2,9 +2,11 @@
   background-image: url(../../../images/trash_btn.svg);
   background-color: transparent;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: 18px 19px;
   width: 18px;
   height: 19px;
+  padding: 0;
   position: absolute;
   top: 20px;
   right: 20px;
