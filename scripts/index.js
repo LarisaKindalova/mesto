@@ -53,7 +53,12 @@ profileAddButton.addEventListener('click', function() {
 //функиця открытия popup
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+
+  document.addEventListener('keydown', closePopupEscape);
+  popup.addEventListener('mousedown', closePopupOverlay);
+
 };
+
 
 // закрыть popup
 popupCloseButtons.forEach ((button) => {
@@ -66,7 +71,26 @@ popupCloseButtons.forEach ((button) => {
 // функция закрытия popup
 function closePopup (popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closePopupEscape);
 };
+
+// функция закрытия по Esc
+function closePopupEscape (evt)  {
+  const popupOpened = document.querySelector('.popup_opened')
+
+  if (evt.key === 'Escape') {
+    closePopup (popupOpened);
+  };
+}
+// функция закрытия по Overlay
+function closePopupOverlay (evt) {
+  const popupOpened = document.querySelector('.popup_opened');
+  if (evt.target === popupOpened) {
+    closePopup (popupOpened);
+  };
+}
+//
+
 
 //функция submit закрытие профиля
 function  submitEditProfileForm (evt) {
