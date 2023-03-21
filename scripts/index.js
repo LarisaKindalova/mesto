@@ -7,6 +7,7 @@ const popupLargeImage = document.querySelector('.popup_type_large-img');
 //кнопки
 const profileEditButton = document.querySelector('.profile__edit-button');
 const profileAddButton = document.querySelector('.profile__add-button');
+const submitButton = document.querySelector('.popup__submit-button');
 
 // кнопка закрыть
 const popupCloseButtons = document.querySelectorAll('.popup__close-button');
@@ -28,7 +29,7 @@ const profileJob = document.querySelector('.profile__job');
 //поля формы добавить фото
 const inputCardName = document.querySelector('.popup__input_value_card-name');
 const inputCardLink = document.querySelector('.popup__input_value_card-link');
-console.log(inputCardLink);
+
 //данные большего изображения
 const largeImage = document.querySelector('.popup__image');
 const largeImageCaption = document.querySelector('.popup__caption');
@@ -41,6 +42,7 @@ const cardList = document.querySelector('.cards__list');
 //открыть редактирование профиля
 profileEditButton.addEventListener('click', function() {
   openPopup(popupEditProfile);
+  submitButton.classList.remove('popup__submit-button_disabled');
   popupInputUsername.value = profileUserName.textContent;
   popupInputJob.value = profileJob.textContent;
 });
@@ -53,10 +55,8 @@ profileAddButton.addEventListener('click', function() {
 //функиця открытия popup
 function openPopup(popup) {
   popup.classList.add('popup_opened');
-
   document.addEventListener('keydown', closePopupEscape);
   popup.addEventListener('mousedown', closePopupOverlay);
-
 };
 
 
@@ -77,7 +77,6 @@ function closePopup (popup) {
 // функция закрытия по Esc
 function closePopupEscape (evt)  {
   const popupOpened = document.querySelector('.popup_opened')
-
   if (evt.key === 'Escape') {
     closePopup (popupOpened);
   };
@@ -89,8 +88,6 @@ function closePopupOverlay (evt) {
     closePopup (popupOpened);
   };
 }
-//
-
 
 //функция submit закрытие профиля
 function  submitEditProfileForm (evt) {

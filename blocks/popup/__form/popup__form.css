@@ -3,11 +3,6 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  row-gap: 27px;
+  align-items: start;
 }
 
-@media screen and (max-width: 550px) {
-  .popup__form {
-    row-gap: 30px;
-  }
-}

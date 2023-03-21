@@ -31,7 +31,7 @@
 <footer class="footer">
 <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
 </footer>
-<!-- template-арточки -->
+<!-- template-карточки -->
 <template id="template-card">
   <li class="cards__item">
     <button class="cards__trash-btn" type="button"></button>
@@ -48,10 +48,12 @@
   <div class="popup__container">
     <button class="popup__close-button" type="button"></button>
     <h2 class="popup__title">Редактировать профиль</h2>
-    <form class="popup__form popup__form_edit" name="popup__edit-form">
-     <input required class="popup__input popup__input_value_username" type="text" name="profile__username"  placeholder="Введите имя">
-     <input required class="popup__input popup__input_value_job" type="text" name="profile__job" placeholder="Введите род занятий">
-      <button type="submit" class="popup__submit-button" aria-label="кнопка сохранить">Сохранить</button>
+    <form class="popup__form popup__form_edit" name="popup__edit-form" novalidate>
+      <input required minlength="2"  maxlength="40" class="popup__input popup__input_value_username" id="username-input" type="text" name="username" placeholder="Введите имя">
+     <span class="popup__input-error username-input-error"></span>
+     <input required minlength="2" maxlength="200" class="popup__input popup__input_value_job" id="job-input" type="text" name="job" placeholder="Введите род занятий">
+     <span class="popup__input-error job-input-error"></span>
+     <button type="submit" class="popup__submit-button" aria-label="кнопка сохранить">Сохранить</button>
     </form>
   </div>
 </div>
@@ -60,10 +62,12 @@
   <div class="popup__container">
     <button class="popup__close-button" type="button"></button>
     <h2 class="popup__title">Новое место</h2>
-    <form class="popup__form popup__form_add" name="popup__add-form">
-     <input required class="popup__input popup__input_value_card-name" type="text" name="card-name"  placeholder="Название">
-     <input required class="popup__input popup__input_value_card-link" type="url" name="card-link" placeholder="Ссылка на картинку">
-      <button type="submit" class="popup__submit-button" aria-label="кнопка сохранить">Сохранить</button>
+    <form class="popup__form popup__form_add" name="popup__add-form" novalidate>
+     <input required minlength="2" maxlength="30" class="popup__input popup__input_value_card-name" id="card-name-input" type="text" name="card-name" placeholder="Название">
+     <span class="popup__input-error card-name-input-error"></span>
+     <input required class="popup__input popup__input_value_card-link" type="url" id="card-link-input" name="card-link" placeholder="Ссылка на картинку">
+     <span class="popup__input-error card-link-input-error"></span>
+     <button type="submit" class="popup__submit-button popup__submit-button_disabled" aria-label="кнопка сохранить">Сохранить</button>
     </form>
   </div>
 </div>
@@ -76,6 +80,7 @@
   </div>
 </div>
 <script src="./scripts/constants.js"></script>
+<script src="./scripts/validate.js"></script>
 <script src="./scripts/index.js"></script>
 </body>
 </html>

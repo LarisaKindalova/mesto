@@ -24,3 +24,12 @@ const initialCards = [
     link: 'http://fotorelax.ru/wp-content/uploads/2016/10/lake-baikal-04.jpg'
   }
 ];
+
+const validationConfig = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  activeErrorClass: 'popup__input-error_active',
+  errorClass: 'popup__input_error-type',
+  submitButtonSelector: '.popup__submit-button',
+  disabledsubmitButtonClass: 'popup__submit-button_disabled'
+  };
