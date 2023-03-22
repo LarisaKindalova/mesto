@@ -58,7 +58,6 @@ function openPopup(popup) {
   document.addEventListener('keydown', closePopupEscape);
   popup.addEventListener('mousedown', closePopupOverlay);
   disableButton(profileSubmitButton, validationConfig);
-  console.log(disableButton)
 };
 
 
