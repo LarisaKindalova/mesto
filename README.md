@@ -13,8 +13,7 @@
 *  удалять фотографии;
 *  валидация форм;
 
-=======
-Посмоотреть что получилось [здесь](https://larisakindalova.github.io/mesto/index.html)
+Посмотреть что получилось [здесь](https://larisakindalova.github.io/mesto/index.html)
 - - -
 ![image](https://user-images.githubusercontent.com/120237097/226641689-0b814922-0a7f-44d1-8d60-6a54a754c6e6.png)
 

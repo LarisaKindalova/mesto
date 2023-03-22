@@ -22,6 +22,18 @@ const checkInputValidity = (formElement, inputElement, config) => {
     hideInputError(formElement, inputElement, config);
   }
 };
+// делаем кнопку неактивной
+const disableButton = (buttonElement, config) => {
+  buttonElement.classList.add(config.disabledsubmitButtonClass);
+  buttonElement.disabled = true;
+};
+
+//делаем кнопку активной
+const enableButton = (buttonElement, config) => {
+  buttonElement.classList.remove(config.disabledsubmitButtonClass);
+  buttonElement.disabled= false;
+};
+
 
 //если инпуты не вылидные
 const hasInvalidInput = (inputList) => {
@@ -30,11 +42,9 @@ const hasInvalidInput = (inputList) => {
 
 const toggleButtonState = (inputList, buttonElement, config) => {
   if (hasInvalidInput(inputList)) {
-    buttonElement.classList.add(config.disabledsubmitButtonClass);
-    buttonElement.disabled = true;
+    disableButton(buttonElement, config);
   } else {
-    buttonElement.classList.remove(config.disabledsubmitButtonClass);
-    buttonElement.disabled= false;
+    enableButton(buttonElement, config);
   }
 };
 
@@ -44,6 +54,10 @@ const setEventListeners =(formElement, config) => {
   const buttonElement = formElement.querySelector(config.submitButtonSelector);
 
    toggleButtonState(inputList, buttonElement, config);
+
+   formElement.addEventListener('reset', ()=> {
+    disableButton(buttonElement, config);
+   });
 
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', () => {

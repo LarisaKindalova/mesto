@@ -7,13 +7,14 @@ const popupLargeImage = document.querySelector('.popup_type_large-img');
 //кнопки
 const profileEditButton = document.querySelector('.profile__edit-button');
 const profileAddButton = document.querySelector('.profile__add-button');
-const submitButton = document.querySelector('.popup__submit-button');
+const profileSubmitButton = document.querySelector('.popup__submit-button');
 
 // кнопка закрыть
 const popupCloseButtons = document.querySelectorAll('.popup__close-button');
 
 //форма редактирования
-const popupEditForm = document.querySelector('.popup__form_edit');
+const popupEditForm = document.forms['popup__edit-form'];
+
 
 //поля формы редактирования
 const popupInputUsername = document.querySelector('.popup__input_value_username');
@@ -42,7 +43,6 @@ const cardList = document.querySelector('.cards__list');
 //открыть редактирование профиля
 profileEditButton.addEventListener('click', function() {
   openPopup(popupEditProfile);
-  submitButton.classList.remove('popup__submit-button_disabled');
   popupInputUsername.value = profileUserName.textContent;
   popupInputJob.value = profileJob.textContent;
 });
@@ -57,6 +57,8 @@ function openPopup(popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closePopupEscape);
   popup.addEventListener('mousedown', closePopupOverlay);
+  disableButton(profileSubmitButton, validationConfig);
+  console.log(disableButton)
 };
 
 
@@ -82,10 +84,10 @@ function closePopupEscape (evt)  {
   };
 }
 // функция закрытия по Overlay
+// currentTarget — указывает на элемент, на котором установлен обработчик события. В нашем случае открытый попап
 function closePopupOverlay (evt) {
-  const popupOpened = document.querySelector('.popup_opened');
-  if (evt.target === popupOpened) {
-    closePopup (popupOpened);
+    if (evt.target === evt.currentTarget) {
+    closePopup (evt.currentTarget);
   };
 }
 
@@ -136,10 +138,11 @@ function renderCard (templateCard) {
   cardList.prepend(createCard(templateCard));
 };
 
-initialCards.forEach(templateCard => {renderCard(templateCard);});
+// initialCards.forEach(templateCard => {renderCard(templateCard);});
+initialCards.forEach(renderCard);
 
 //submit формы
-function SubmitAddForm (evt) {
+function submitAddForm (evt) {
   evt.preventDefault();
   renderCard ({
     name: inputCardName.value,
@@ -147,7 +150,6 @@ function SubmitAddForm (evt) {
   });
   closePopup(popupAddCard);
   popupFormAdd.reset();
-
 };
 
-popupAddCard.addEventListener('submit', SubmitAddForm);
+popupAddCard.addEventListener('submit', submitAddForm);
