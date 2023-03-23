@@ -7,12 +7,12 @@ const showInputError = (formElement, inputElement, errorMessage, config) => {
   };
 
   // скрыть текст ошибки
-  const hideInputError = (formElement, inputElement, config) => {
-    const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-    inputElement.classList.remove(config.errorClass);
-    errorElement.classList.remove(config.activeErrorClass);
-    errorElement.textContent = " ";
-  };
+const hideInputError = (formElement, inputElement, config) => {
+  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+  inputElement.classList.remove(config.errorClass);
+  errorElement.classList.remove(config.activeErrorClass);
+  errorElement.textContent = " ";
+};
 
 // проверяем валидность формы и вызываем соот-ющий метод
 const checkInputValidity = (formElement, inputElement, config) => {
@@ -31,9 +31,8 @@ const disableButton = (buttonElement, config) => {
 //делаем кнопку активной
 const enableButton = (buttonElement, config) => {
   buttonElement.classList.remove(config.disabledsubmitButtonClass);
-  buttonElement.disabled= false;
+  buttonElement.disabled = false;
 };
-
 
 //если инпуты не вылидные
 const hasInvalidInput = (inputList) => {
@@ -53,12 +52,12 @@ const setEventListeners =(formElement, config) => {
   const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
   const buttonElement = formElement.querySelector(config.submitButtonSelector);
 
-   toggleButtonState(inputList, buttonElement, config);
+  toggleButtonState(inputList, buttonElement, config);
 
-  //  //обработчик для деактивации кнопки
-  //  formElement.addEventListener('reset', ()=> {
-  //   disableButton(buttonElement, config);
-  //  });
+   //обработчик для деактивации кнопки
+  formElement.addEventListener('reset', ()=> {
+    disableButton(buttonElement, config);
+   });
 
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', () => {
@@ -75,4 +74,4 @@ const enableValidation = (config) => {
   });
  };
 
- enableValidation(validationConfig);
+enableValidation(validationConfig);
