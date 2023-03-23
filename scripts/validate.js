@@ -57,7 +57,7 @@ const setEventListeners =(formElement, config) => {
    //обработчик для деактивации кнопки
   formElement.addEventListener('reset', ()=> {
     disableButton(buttonElement, config);
-   });
+  });
 
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', () => {
