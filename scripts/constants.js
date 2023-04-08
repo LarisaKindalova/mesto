@@ -33,3 +33,5 @@ const validationConfig = {
   submitButtonSelector: '.popup__submit-button',
   disabledsubmitButtonClass: 'popup__submit-button_disabled'
   };
+
+  export { initialCards, validationConfig }
