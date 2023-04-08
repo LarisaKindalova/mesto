@@ -1,7 +1,7 @@
 import { initialCards } from './constants.js';
 import { validationConfig } from './constants.js';
 import { Card } from './Card.js';
-//import { FormValidator } from './FormValidator.js';
+// import { FormValidator } from './FormValidator.js';
 
 //popup
 const popups = document.querySelectorAll('.popup');
@@ -42,6 +42,11 @@ const largeImageCaption = document.querySelector('.popup__caption');
 //шаблон карточки
 const cardList = document.querySelector('.cards__list');
 
+// const validatorEditForm = new FormValidator(validationConfig, popupEditForm);
+// validatorEditForm.enableValidation();
+
+// const validatorAddForm = new FormValidator(validationConfig, popupFormAdd);
+// validatorAddForm.enableValidation();
 
 //открыть редактирование профиля
 profileEditButton.addEventListener('click', function() {
@@ -103,15 +108,15 @@ function  submitEditProfileForm (evt) {
 popupEditForm.addEventListener('submit', submitEditProfileForm);
 
   //открыть большое изображение
-function openPopupLargeImage(name, link) {
-  largeImageCaption.textContent = name;
-  largeImage.alt = name;
-  largeImage.src = link;
+function openPopupLargeImage(data) {
   openPopup(popupLargeImage)
+  largeImageCaption.textContent = this._name;
+  largeImage.alt = this._name;
+  largeImage.src = this._link;
 };
 
-function renderCard (item) {
-  const card = new Card (item, '#template-card', openPopupLargeImage)
+function renderCard (data) {
+  const card = new Card (data, '#template-card', openPopupLargeImage)
   const cardElement = card.generateCard();
   cardList.prepend(cardElement);
 };
@@ -135,4 +140,4 @@ function submitAddForm (evt) {
 
 popupAddCard.addEventListener('submit', submitAddForm);
 
-popupAddCard.addEventListener('submit', submitAddForm);
+

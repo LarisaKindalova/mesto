@@ -30,7 +30,7 @@ export class Card {
   }
   _setEventListeners() {
     this._cardsPhoto.addEventListener('click', ()=> {
-      this._openLargeImage(this._name, this._link);
+      this._openLargeImage(this._data);
      });
 
     // лайк
@@ -44,7 +44,7 @@ export class Card {
   });
 }
   _openLargeImage() {
-    this._openPopupLargeImage()
+    this._openPopupLargeImage(this._data)
   };
 
   _toggleLikeButton() {
