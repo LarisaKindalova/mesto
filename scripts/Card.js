@@ -30,30 +30,30 @@ export class Card {
   }
   _setEventListeners() {
     this._cardsPhoto.addEventListener('click', ()=> {
-      this._openLargeImage(this._data);
-     });
+      this._openPopupLargeImage ({
+        link: this._link,
+        name: this._name
+      });
+    });
 
     // лайк
     this._likeButton.addEventListener('click', () => {
       this._toggleLikeButton()
     });
 
-  // удалить карточку
+    // удалить карточку
     this._trashButton.addEventListener('click', () => {
     this._removeCardButton()
-  });
-}
-  _openLargeImage() {
-    this._openPopupLargeImage(this._data)
-  };
+   });
+  }
 
   _toggleLikeButton() {
     this._likeButton.classList.toggle('cards__like_active');
-  };
+    };
 
   _removeCardButton() {
     this._element.remove()
-  };
+    };
 }
 
 

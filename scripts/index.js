@@ -1,10 +1,9 @@
 import { initialCards } from './constants.js';
 import { validationConfig } from './constants.js';
 import { Card } from './Card.js';
-// import { FormValidator } from './FormValidator.js';
+import { FormValidator } from './FormValidator.js';
 
 //popup
-const popups = document.querySelectorAll('.popup');
 const popupEditProfile = document.querySelector('.popup_type_edit-profile');
 const popupAddCard = document.querySelector('.popup_type_add-card');
 const popupLargeImage = document.querySelector('.popup_type_large-img');
@@ -41,12 +40,6 @@ const largeImageCaption = document.querySelector('.popup__caption');
 
 //шаблон карточки
 const cardList = document.querySelector('.cards__list');
-
-// const validatorEditForm = new FormValidator(validationConfig, popupEditForm);
-// validatorEditForm.enableValidation();
-
-// const validatorAddForm = new FormValidator(validationConfig, popupFormAdd);
-// validatorAddForm.enableValidation();
 
 //открыть редактирование профиля
 profileEditButton.addEventListener('click', function() {
@@ -108,11 +101,11 @@ function  submitEditProfileForm (evt) {
 popupEditForm.addEventListener('submit', submitEditProfileForm);
 
   //открыть большое изображение
-function openPopupLargeImage(data) {
+function openPopupLargeImage (data) {
   openPopup(popupLargeImage)
-  largeImageCaption.textContent = this._name;
-  largeImage.alt = this._name;
-  largeImage.src = this._link;
+  largeImageCaption.textContent = data.name;
+  largeImage.alt = data.name;
+  largeImage.src = data.link;
 };
 
 function renderCard (data) {
@@ -133,11 +126,20 @@ function submitAddForm (evt) {
   });
 
   const cardFormSubmitButton = popupAddCard.querySelector('.popup__submit-button');
-  disableButton(cardFormSubmitButton, validatorAddForm);
-  closePopup(popupAddCard);
-  popupFormAdd.reset();
+    validatorAddForm.resetFormValidation(cardFormSubmitButton, validatorAddForm);
+    closePopup(popupAddCard);
+    popupFormAdd.reset();
+
+// const cardFormSubmitButton = popupAddCard.querySelector('.popup__submit-button');
+//   disableButton(cardFormSubmitButton, validationConfig);;
+//   closePopup(popupAddCard);
+// popupFormAdd.reset();
 };
 
 popupAddCard.addEventListener('submit', submitAddForm);
 
+const validatorEditForm = new FormValidator(validationConfig, popupEditForm);
+validatorEditForm.enableValidation();
 
+const validatorAddForm = new FormValidator(validationConfig, popupFormAdd);
+validatorAddForm.enableValidation();
