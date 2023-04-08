@@ -129,11 +129,6 @@ function submitAddForm (evt) {
     validatorAddForm.resetFormValidation(cardFormSubmitButton, validatorAddForm);
     closePopup(popupAddCard);
     popupFormAdd.reset();
-
-// const cardFormSubmitButton = popupAddCard.querySelector('.popup__submit-button');
-//   disableButton(cardFormSubmitButton, validationConfig);;
-//   closePopup(popupAddCard);
-// popupFormAdd.reset();
 };
 
 popupAddCard.addEventListener('submit', submitAddForm);

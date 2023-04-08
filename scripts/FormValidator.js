@@ -13,7 +13,6 @@ export class FormValidator {
 
   resetFormValidation () {
     this._disableButton();
-    this._hideInputError(input,  this._errorElement);
   }
 
   //показать текст ошибки
@@ -40,9 +39,9 @@ export class FormValidator {
       this._showInputError(input, input.validationMessage);
     } else {
       this._hideInputError(input);
-     }
-
+    }
   };
+
   // делаем кнопку неактивной
   _disableButton () {
     this._buttonElement.classList.add(this._config.disabledsubmitButtonClass);
@@ -68,7 +67,6 @@ export class FormValidator {
     } else {
       this._enableButton();
     };
-
   };
 
   _setEventListeners()  {

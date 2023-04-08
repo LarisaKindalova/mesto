@@ -28,6 +28,7 @@ export class Card {
     this._setEventListeners()
     return this._element;
   }
+
   _setEventListeners() {
     this._cardsPhoto.addEventListener('click', ()=> {
       this._openPopupLargeImage ({
@@ -49,11 +50,11 @@ export class Card {
 
   _toggleLikeButton() {
     this._likeButton.classList.toggle('cards__like_active');
-    };
+  };
 
   _removeCardButton() {
     this._element.remove()
-    };
+  };
 }
 
 
