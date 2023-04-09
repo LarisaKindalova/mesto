@@ -18,7 +18,6 @@ const popupCloseButtons = document.querySelectorAll('.popup__close-button');
 //форма редактирования
 const popupEditForm = document.forms['popup__edit-form'];
 
-
 //поля формы редактирования
 const popupInputUsername = document.querySelector('.popup__input_value_username');
 const popupInputJob = document.querySelector('.popup__input_value_job');
