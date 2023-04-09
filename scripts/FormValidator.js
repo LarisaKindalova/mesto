@@ -1,4 +1,3 @@
-
 export class FormValidator {
   constructor (config, formElement) {
     this._config = config;
@@ -13,6 +12,9 @@ export class FormValidator {
 
   resetFormValidation () {
     this._disableButton();
+    this._inputList.forEach((input) =>{
+      this._hideInputError(input);
+    })
   }
 
   //показать текст ошибки
@@ -73,7 +75,7 @@ export class FormValidator {
     this._buttonElement = this._formElement.querySelector(this._config.submitButtonSelector);
 
     this._formElement.addEventListener('reset', () => {
-      this._disableButton(submitButton, settings)
+      this._disableButton(this._buttonElement)
     });
     this._inputList.forEach((input) => {
       input.addEventListener('input', () => {

@@ -4,6 +4,7 @@ import { Card } from './Card.js';
 import { FormValidator } from './FormValidator.js';
 
 //popup
+const popups = document.querySelectorAll('.popup')
 const popupEditProfile = document.querySelector('.popup_type_edit-profile');
 const popupAddCard = document.querySelector('.popup_type_add-card');
 const popupLargeImage = document.querySelector('.popup_type_large-img');
@@ -22,7 +23,7 @@ const popupEditForm = document.forms['popup__edit-form'];
 const popupInputUsername = document.querySelector('.popup__input_value_username');
 const popupInputJob = document.querySelector('.popup__input_value_job');
 
-//форма ADD
+//форма addProfile
 const popupFormAdd = document.querySelector('.popup__form_add');
 
 //редкатировать профиль
@@ -39,6 +40,17 @@ const largeImageCaption = document.querySelector('.popup__caption');
 
 //шаблон карточки
 const cardList = document.querySelector('.cards__list');
+
+popups.forEach((popup) => {
+  popup.addEventListener('mousedown', (evt) => {
+    if (evt.target.classList.contains('popup__opened')) {
+      closePopup(popup)
+    }
+    if (evt.target.classList.contains('.popup__close-button')) {
+      closePopup(popup)
+    };
+  });
+});
 
 //открыть редактирование профиля
 profileEditButton.addEventListener('click', function() {
@@ -71,6 +83,7 @@ popupCloseButtons.forEach ((button) => {
 function closePopup (popup) {
   popup.classList.remove('popup_opened');
   document.removeEventListener('keydown', closePopupEscape);
+  popup.removeEventListener('mousedown', closePopupOverlay);
 };
 
 // функция закрытия по Esc
@@ -107,25 +120,32 @@ function openPopupLargeImage (data) {
   largeImage.src = data.link;
 };
 
-function renderCard (data) {
+function createCard(data) {
   const card = new Card (data, '#template-card', openPopupLargeImage)
   const cardElement = card.generateCard();
-  cardList.prepend(cardElement);
+
+  return cardElement;
 };
 
-// initialCards.forEach(templateCard => {renderCard(templateCard);});
-initialCards.forEach(renderCard);
+function renderCard(data) {
+  const card = createCard(data)
+  cardList.prepend(card);
+}
+
+initialCards.forEach(card => {
+  cardList.prepend(createCard(card));
+})
 
 //submit формы
 function submitAddForm (evt) {
   evt.preventDefault();
+
   renderCard ({
     name: inputCardName.value,
     link: inputCardLink.value,
   });
 
-  const cardFormSubmitButton = popupAddCard.querySelector('.popup__submit-button');
-    validatorAddForm.resetFormValidation(cardFormSubmitButton, validatorAddForm);
+    validatorAddForm.resetFormValidation();
     closePopup(popupAddCard);
     popupFormAdd.reset();
 };

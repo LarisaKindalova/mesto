@@ -30,7 +30,7 @@ export class Card {
   }
 
   _setEventListeners() {
-    this._cardsPhoto.addEventListener('click', ()=> {
+    this._cardsPhoto.addEventListener('click', () => {
       this._openPopupLargeImage ({
         link: this._link,
         name: this._name
