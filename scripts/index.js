@@ -4,8 +4,9 @@ import { Card } from './Card.js';
 import { FormValidator } from './FormValidator.js';
 
 //popup
-const popups = document.querySelectorAll('.popup')
+const popups = document.querySelectorAll('.popup');
 const popupEditProfile = document.querySelector('.popup_type_edit-profile');
+console.log(popupEditProfile)
 const popupAddCard = document.querySelector('.popup_type_add-card');
 const popupLargeImage = document.querySelector('.popup_type_large-img');
 
