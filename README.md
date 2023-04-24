@@ -17,5 +17,5 @@
 
 Посмотреть что получилось [здесь](https://larisakindalova.github.io/mesto/index.html)
 - - -
-(![image](https://user-images.githubusercontent.com/120237097/233884579-36be692e-790b-401d-bfa7-7adb0aa10600.png)
+![image](https://user-images.githubusercontent.com/120237097/233885635-af06c0a9-e598-4e04-9ecb-f5a0fd42dc20.png)
 
