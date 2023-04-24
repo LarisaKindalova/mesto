@@ -1,3 +1,4 @@
+export { initialCards, validationConfig,  profileEditButton, profileAddButton, inputUsername, inputJob, popupEditForm, popupAddForm}
 const initialCards = [
   {
     name: 'Мончегорск, Мурманская область',
@@ -34,4 +35,14 @@ const validationConfig = {
   disabledsubmitButtonClass: 'popup__submit-button_disabled'
   };
 
-  export { initialCards, validationConfig }
+  //кнопки
+  const profileEditButton = document.querySelector('.profile__edit-button');
+  const profileAddButton = document.querySelector('.profile__add-button');
+
+  // //форма редактирования профиля
+  const popupEditForm = document.forms['popup__edit-form'];
+  const inputUsername = document.querySelector('.popup__input_value_username');
+  const inputJob = document.querySelector('.popup__input_value_job');
+
+// форма добалвения фотографии
+const popupAddForm = document.querySelector('.popup__form_add');

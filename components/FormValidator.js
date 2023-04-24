@@ -36,7 +36,7 @@ export class FormValidator {
   };
 
   // проверяем валидность формы и вызываем соот-ющий метод
-  _checkInputValidity (input) {
+  _checkInputValidity = (input) =>{
     if (!input.validity.valid) {
       this._showInputError(input, input.validationMessage);
     } else {
