@@ -1,4 +1,4 @@
-export { initialCards, validationConfig, profileAvatarButton, profileEditButton, profileAddButton, inputAvatar, inputUsername, inputJob, popupEditForm, popupAddForm, popupFormAvatar }
+export {  validationConfig, profileAvatarButton, profileEditButton, profileAddButton, inputAvatar, inputUsername, inputJob, popupEditForm, popupAddForm, popupFormAvatar }
 // const initialCards = [
 //   {
 //     name: 'Мончегорск, Мурманская область',
