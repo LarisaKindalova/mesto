@@ -3,6 +3,7 @@ export class FormValidator {
     this._config = config;
     this._formElement = formElement;
     this._inputList = Array.from(this._formElement.querySelectorAll(this._config.inputSelector));
+    this._inputList
   }
 
   enableValidation () {
@@ -14,7 +15,7 @@ export class FormValidator {
     this._disableButton();
     this._inputList.forEach((input) =>{
       this._hideInputError(input);
-    })
+    });
   }
 
   //показать текст ошибки

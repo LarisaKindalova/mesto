@@ -19,6 +19,15 @@ export class PopupWithForm extends Popup {
       return this._formValues;
   }
 
+  renderLoading (isLoading) {
+    if(isLoading) {
+      this.text = this._popupSubmitButton.textContent;
+      this._popupSubmitButton.textContent = "Сохранение...";
+    } else {
+      this._popupSubmitButton.textContent = this.text;
+    }
+  }
+
   //сбрасывает форму
   close () {
     super.close()

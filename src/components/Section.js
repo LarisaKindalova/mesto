@@ -11,6 +11,10 @@ export class Section {
       this._renderer(item);
     });
   };
+
+  addAppendItem (element) {
+    this._container.append(element);
+  }
     //принимает DOM-элемент и добавляет его в контейнер
   addItem(element) {
     this._container.prepend(element);

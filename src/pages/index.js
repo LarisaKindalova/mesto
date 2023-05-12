@@ -32,7 +32,7 @@ const api = new Api({
 //создаем экземпляр класс секшн
 const cardSection = new Section({
   renderer: (item) => {
-    cardSection.addItem(createCard(item));
+    cardSection.addAppendItem(createCard(item));
   },
   selector: ".cards__list",
 });
@@ -113,7 +113,6 @@ const popupAddCard = new PopupWithForm({
         cardSection.addItem(createCard(res));
         popupAddCard.close();
         popupAddForm.reset();
-        validatorAddForm.resetFormValidation();
       })
       .catch((err) => console.log(`Ошибка: ${err}`))
       .finally(()=> {
@@ -126,6 +125,7 @@ popupAddCard.setEventListeners();
 //открытие формы добавить фото
 profileAddButton.addEventListener("click", () => {
   popupAddCard.open();
+  validatorAddForm.resetFormValidation();
 });
 
 const popupEditProfile = new PopupWithForm({
@@ -135,6 +135,7 @@ const popupEditProfile = new PopupWithForm({
     api.setUserInfoApi(data)
       .then((res) => {
         userInfo.setUserInfo(res);
+
         popupEditProfile.close();
       })
       .catch((err) => console.log(`Ошибка: ${err}`))
@@ -151,6 +152,7 @@ profileEditButton.addEventListener("click", () => {
   inputUsername.value = currentInfo.name;
   inputJob.value = currentInfo.about;
   popupEditProfile.open();
+  validatorEditForm.resetFormValidation();
 });
 
 // //попап аватара
@@ -162,7 +164,7 @@ const popupAvatar = new PopupWithForm({
       .then((res) => {
         userInfo.setUserInfo(res);
         popupAvatar.close();
-        validatorAvatarForm.resetFormValidation();
+
       })
       .catch((err) => console.log(`Ошибка: ${err}`))
       .finally(()=>{
@@ -175,6 +177,7 @@ popupAvatar.setEventListeners();
 
 profileAvatarButton.addEventListener("click", () => {
   popupAvatar.open();
+  validatorAvatarForm.resetFormValidation();
 });
 
 //попап удаления

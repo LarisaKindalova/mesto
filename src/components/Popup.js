@@ -21,14 +21,7 @@ export class Popup {
     }
   };
 
-  renderLoading (isLoading) {
-    if(isLoading) {
-      this.text = this._popupSubmitButton.textContent;
-      this._popupSubmitButton.textContent = "Сохранение...";
-    } else {
-      this._popupSubmitButton.textContent = this.text;
-    }
-  }
+  
 
   setEventListeners () {
     this._popup.addEventListener('mousedown', (evt) => {
