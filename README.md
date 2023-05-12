@@ -12,10 +12,10 @@
 *  возможность ставить и убирать лайки;
 *  удалять фотографии;
 *  валидация форм;
-* ООП 
-* настроен webpack
+*  ООП
+*  настроен webpack
+*  сайт подключен к серверу
 
 Посмотреть что получилось [здесь](https://larisakindalova.github.io/mesto/index.html)
 - - -
-![image](https://user-images.githubusercontent.com/120237097/233885635-af06c0a9-e598-4e04-9ecb-f5a0fd42dc20.png)
 
