@@ -1,14 +1,13 @@
 
 export class Section {
-  constructor ({items, renderer}, selector) {
-  this._initialItems = items;
+  constructor ({ renderer, selector}) {
   this._renderer = renderer; //функция
   this._container = document.querySelector(selector);
   }
 
   //отрисовка карточек на странице
-  renderItems =() => {
-    this._initialItems.forEach((item) => {
+  renderItems =(items) => {
+    items.forEach((item) => {
       this._renderer(item);
     });
   };

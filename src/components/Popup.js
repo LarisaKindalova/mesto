@@ -2,6 +2,7 @@ export class Popup {
   constructor (popupSelector) {
     this._popupSelector = popupSelector;
     this._popup = document.querySelector(popupSelector);
+    this._popupSubmitButton = this._popup.querySelector('.popup__submit-button')
   }
 
   open () {
@@ -20,12 +21,18 @@ export class Popup {
     }
   };
 
+  renderLoading (isLoading) {
+    if(isLoading) {
+      this.text = this._popupSubmitButton.textContent;
+      this._popupSubmitButton.textContent = "Сохранение...";
+    } else {
+      this._popupSubmitButton.textContent = this.text;
+    }
+  }
+
   setEventListeners () {
     this._popup.addEventListener('mousedown', (evt) => {
-      if (evt.target.classList.contains('popup_opened')) {
-        this.close()
-      }
-      if (evt.target.classList.contains('popup__close-button')) {
+      if ((evt.target.classList.contains('popup_opened')) || (evt.target.classList.contains('popup__close-button'))){
         this.close()
       };
     });

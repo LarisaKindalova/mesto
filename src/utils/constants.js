@@ -1,11 +1,11 @@
-export { initialCards, validationConfig,  profileEditButton, profileAddButton, inputUsername, inputJob, popupEditForm, popupAddForm}
+export { initialCards, validationConfig, profileAvatarButton, profileEditButton, profileAddButton, inputAvatar, inputUsername, inputJob, popupEditForm, popupAddForm, popupFormAvatar }
 const initialCards = [
   {
     name: 'Мончегорск, Мурманская область',
     link: 'https://cs5.pikabu.ru/post_img/2015/12/20/11/og_og_1450641426272621479.jpg'
   },
   {
-    name: 'Ленские столбыб Саха Якутия',
+    name: 'Ленские столбы Саха Якутия',
     link: 'https://avatars.dzeninfra.ru/get-zen_doc/1247665/pub_5be562d6b6e60f00aec8e6c2_5be9620d26cf1600a9cb6cd6/scale_1200'
   },
   {
@@ -38,11 +38,20 @@ const validationConfig = {
   //кнопки
   const profileEditButton = document.querySelector('.profile__edit-button');
   const profileAddButton = document.querySelector('.profile__add-button');
+  const profileAvatarButton = document.querySelector('.profile__avatar-btn');
 
   // //форма редактирования профиля
   const popupEditForm = document.forms['popup__edit-form'];
   const inputUsername = document.querySelector('.popup__input_value_username');
   const inputJob = document.querySelector('.popup__input_value_job');
 
+  //форма редактирования аватара
+  const popupFormAvatar = document.querySelector('.popup__form_avatar');
+  const inputAvatar = document.querySelector('.popup__input_value_avatar');
+
 // форма добалвения фотографии
 const popupAddForm = document.querySelector('.popup__form_add');
+
+
+
+

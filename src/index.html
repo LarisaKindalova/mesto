@@ -13,11 +13,13 @@
 <main class="content">
   <section class="profile">
     <div class="profile__form">
-      <img class="profile__avatar" src="<%=require('./images/avatar.jpg')%>" alt="Аватар">
+      <button class="profile__avatar-btn" typy="button">
+        <img class="profile__avatar" src="#" alt="Аватар">
+      </button>
         <div class="profile__info">
-         <h1 class="profile__username">Лара Кин</h1>
+         <h1 class="profile__username"></h1>
          <button class="profile__edit-button" type="button" aria-label="Редактировать профиль"></button>
-         <p class="profile__job">Студент курса вебразработки</p>
+         <p class="profile__job"></p>
         </div>
     </div>
     <button class="profile__add-button" type="button" aria-label="Добавить фото"></button>
@@ -37,10 +39,42 @@
     <img  class="cards__photo" src="#" alt="фото">
     <div class="cards__caption">
       <h2 class="cards__title"></h2>
-      <button class="cards__like" type="button" aria-label="Лайк"></button>
+      <div class="cards_like-container">
+        <button class="cards__like" type="button" aria-label="Лайк"></button>
+        <span class="cards__like_counter">0</span>
+    </div>
     </div>
   </li>
 </template>
+
+<!-- Попап обновить автар -->
+<div class="popup popup_type_avatar">
+  <div class="popup__container">
+    <button class="popup__close-button" type="button"></button>
+    <h2 class="popup__title">Обновить аватар</h2>
+    <form  class="popup__form popup__form_avatar" name="popup__avatar-form" novalidate>
+      <input required class="popup__input popup__input_value_avatar"
+        name="avatar"
+        id="avatar-input"
+        type="url"
+        placeholder="Ссылка на фото">
+      </input>
+      <span class="popup__input-error avatar-input-error"></span>
+      <button type="submit" class="popup__submit-button" aria-label="кнопка сохранить">Сохранить</button>
+    </form>
+  </div>
+</div>
+
+<!-- Попап  подтвреждения-->
+<div class="popup popup_type_confirm">
+  <div class="popup__container">
+    <h2 class="popup__title">Вы уверены?</h2>
+    <button class="popup__close-button" type="button"></button>
+    <form  class="popup__form popup__form_confirm" name="popup__confirm-form" novalidate>
+    <button type="submit" class="popup__submit-button" aria-label="кнопка Да">Да</button>
+    </form>
+  </div>
+</div>
 
 <!-- Попап редкатирование профиля-->
 <div class="popup popup_type_edit-profile">
@@ -48,9 +82,17 @@
     <button class="popup__close-button" type="button"></button>
     <h2 class="popup__title">Редактировать профиль</h2>
     <form class="popup__form popup__form_edit" name="popup__edit-form" novalidate>
-      <input required minlength="2"  maxlength="40" class="popup__input popup__input_value_username" id="username-input" type="text" name="username" placeholder="Введите имя">
+      <input required minlength="2"  maxlength="40" class="popup__input popup__input_value_username"
+        id="username-input"
+        type="text"
+        name="name"
+        placeholder="Введите имя">
      <span class="popup__input-error username-input-error"></span>
-     <input required minlength="2" maxlength="200" class="popup__input popup__input_value_job" id="job-input" type="text" name="job" placeholder="Введите род занятий">
+     <input required minlength="2" maxlength="200" class="popup__input popup__input_value_job"
+      id="job-input"
+      type="text"
+      name="about"
+      placeholder="Введите род занятий">
      <span class="popup__input-error job-input-error"></span>
      <button type="submit" class="popup__submit-button" aria-label="кнопка сохранить">Сохранить</button>
     </form>
@@ -62,11 +104,18 @@
     <button class="popup__close-button" type="button"></button>
     <h2 class="popup__title">Новое место</h2>
     <form class="popup__form popup__form_add" name="popup__add-form" novalidate>
-     <input required minlength="2" maxlength="30" class="popup__input popup__input_value_card-name" id="card-name-input" type="text" name="name" placeholder="Название">
+     <input required minlength="2" maxlength="30" class="popup__input popup__input_value_card-name"
+      id="card-name-input"
+      type="text" name="name"
+      placeholder="Название">
      <span class="popup__input-error card-name-input-error"></span>
-     <input required class="popup__input popup__input_value_card-link" type="url" id="card-link-input" name="link" placeholder="Ссылка на картинку">
+     <input required class="popup__input popup__input_value_card-link"
+      type="url"
+      id="card-link-input"
+      name="link"
+      placeholder="Ссылка на картинку">
      <span class="popup__input-error card-link-input-error"></span>
-     <button type="submit" class="popup__submit-button popup__submit-button_disabled" aria-label="кнопка сохранить">Сохранить</button>
+     <button type="submit" class="popup__submit-button popup__submit-button_disabled" aria-label="кнопка сохранить">Создать</button>
     </form>
   </div>
 </div>
@@ -74,7 +123,9 @@
 <div class="popup popup_type_large-img">
   <div class="popup__container-large-img">
     <button class="popup__close-button" type="button"></button>
-    <img class="popup__image " src="#" alt=" ">
+    <img class="popup__image "
+    src="#"
+    alt=" ">
     <p class="popup__caption"></p>
   </div>
 </div>
